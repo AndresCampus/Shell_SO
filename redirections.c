@@ -21,7 +21,7 @@ int main(int argc, char *argv[]) {
 
   // Requiere 4 argumentos incluido el nombre del propio ejecutable
   if (4 > argc) {
-    printf("\tError: Uso: %s ls /tmp/salida.txt\n", argv[0]);
+    printf("\tError: Uso: %s entrada.txt salida.txt sort\n", argv[0]);
     return (-1);
   }
 

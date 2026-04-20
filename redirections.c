@@ -44,6 +44,8 @@ int main(int argc, char *argv[]) {
     return (-1);
   }
 
+  // Cerramos el original. Importante: dup2 ha duplicado el descriptor al stdin (0),
+  // por lo que el descriptor original (fnum1) ya no es necesario.
   fclose(infile);
   argv++; // saltar el nombre del fichero de entrada
 
@@ -63,6 +65,8 @@ int main(int argc, char *argv[]) {
     printf("\tError: redireccionando salida\n");
     return (-1);
   }
+  // Idem para la salida. Una vez redireccionado el stdout (1), cerramos el puntero
+  // original para evitar fugas de descriptores de fichero.
   fclose(outfile);
 
   argv++; // saltar el nombre del fichero de salida

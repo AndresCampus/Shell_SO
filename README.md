@@ -96,3 +96,34 @@ Para salir pulsar ^D
 - ### parse_redirections
       void parse_redirections(char **args, char **file_in, char **file_out)
     Esta función permite obtener los nombres de ficheros correspondientes a las redirecciones simples (operadores > y <). Esta función ha de ser llamada inmediatamente después a la invocación de ***get_command()***. Las cadenas por referencia, ***file_in*** y ***file_out***, contienen los nombres del fichero asociado a las redirecciones < y > respectivamente, siendo NULL si dicha redirección no está presente.
+
+---
+## Guía de Pruebas Sugeridas
+
+Para verificar que el Shell funciona correctamente, se recomienda seguir este orden de pruebas:
+
+### 1. Comandos básicos (Foreground)
+- `ls`
+- `ps`
+- `ls -l /usr/bin`
+- `cat Shell_project.c`
+
+### 2. Comandos en segundo plano (Background)
+- `sleep 10 &` (El shell debe devolver el control inmediatamente)
+- `jobs` (Debería aparecer el proceso sleep en la lista)
+
+### 3. Redirecciones 
+- `ls -l > salida.txt`
+- `sort < salida.txt`
+- `grep "main" < Shell_project.c > lineas_main.txt`
+
+### 4. Comandos internos (Built-in)
+- `cd /tmp`
+- `cd ..`
+- `jobs`
+- `fg 1` (Pasar a primer plano la tarea 1)
+- `bg 1` (Reanudar en segundo plano la tarea parada 1)
+
+### 5. Control de señales
+- Ejecutar `sleep 100` y pulsar `Ctrl+C`: El proceso debe terminar y el Shell debe seguir vivo.
+- Ejecutar `sleep 100` y pulsar `Ctrl+Z`: El proceso debe pararse, el Shell debe informar de ello y volver al prompt.

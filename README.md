@@ -29,6 +29,15 @@ Para limpiar los ejecutables:
 Para salir pulsar ^D
 
 ---
+### Uso del ejemplo de redirecciones:
+Este ejemplo permite ejecutar un comando (ej. `sort`) redirigiendo su entrada desde un fichero y su salida a otro.
+
+Para probarlo con el fichero `entrada.txt` proporcionado:
+1. Compilar: `make redirections`
+2. Ejecutar: `./redirections entrada.txt salida.txt sort`
+3. Comprobar resultado: `cat salida.txt`
+
+---
 ## Descripción del módulo ***job_control***
 
 - ### get_command

@@ -5,7 +5,8 @@ Ficheros fuente base para el desarrollo de la práctica de SO del Grado en Ingen
 - ***Shell_project.c***: fichero fuente con el esqueleto donde desarrollar el Shell.
 - ***job_control.c***: fichero fuente con la implementación de funciones básicas de soporte para el desarrollo del Shell (ver documentación en el guión de la práctica).
 - ***job_control.h***: fichero con definiciones/cabeceras de las funciones de soporte.
-- ***Redirecciones/redirections.c***: fichero fuente con ejemplo de redirección de entrada y salida estándar.
+- ***redirections.c***: fichero fuente con ejemplo de redirección de entrada y salida estándar.
+- ***Makefile***: fichero para automatizar la compilación del proyecto y los ejemplos.
 ---
 ### Extras:
 - ***.devcontainer***: directorio con la configuración de un contenedor para la extensión Dev Container de VSCode con las herramientas necesarias para desarrollar la práctica. Es necesario tener instalado Docker-Desktop (Windows o Mac) y la extensión "Dev Container" en VSCode. 
@@ -13,7 +14,14 @@ Ficheros fuente base para el desarrollo de la práctica de SO del Grado en Ingen
 ---
 
 ### Compilación:
-`gcc Shell_project.c job_control.c -o Shell`
+Para compilar tanto el Shell como los ejemplos:
+`make`
+
+Para compilar un objetivo específico:
+`make Shell` o `make redirections`
+
+Para limpiar los ejecutables:
+`make clean`
 
 ### Ejecución:
 `./Shell`

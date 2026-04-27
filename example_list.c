@@ -16,6 +16,11 @@ int main() {
 
     printf("--- Ejemplo de gestión de lista --- \n\n");
 
+    // Uso de la macro empty_list para comprobar si la lista no tiene elementos
+    if (empty_list(mi_lista)) {
+        printf("La lista '%s' está inicialmente vacía.\n", mi_lista->command);
+    }
+
     // 2. Añadir un par de elementos:
     // {1001, "ls", "Foreground"}, {1002, "sleep", "Background"}
     // Usamos new_job para crear el nodo y add_job para insertarlo en la lista.
@@ -26,6 +31,9 @@ int main() {
 
     job * work2 = new_job(1002, "sleep", BACKGROUND);
     add_job(mi_lista, work2);
+
+    // Uso de la macro list_size para obtener el número de elementos
+    printf("Trabajos añadidos. Tamaño actual de la lista: %d\n", list_size(mi_lista));
 
     // 3. Pintar la lista completa usando la macro print_job_list
     printf("\nEstado actual de la lista:\n");
@@ -47,7 +55,7 @@ int main() {
     }
 
     // 6. Volver a pintar la lista entera tras el borrado
-    printf("\nLista tras el borrado:\n");
+    printf("\nLista tras el borrado (Tamaño: %d):\n", list_size(mi_lista));
     print_job_list(mi_lista);
 
     printf("\n--- Fin del ejemplo ---\n");

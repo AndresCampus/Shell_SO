@@ -1,8 +1,11 @@
 CC = gcc
 CFLAGS = -Wall -g
-TARGETS = Shell redirections example_list
+TARGETS = a.out Shell redirections example_list
 
 all: $(TARGETS)
+
+a.out: Shell_project.c job_control.c job_control.h
+	$(CC) $(CFLAGS) Shell_project.c job_control.c -o a.out
 
 Shell: Shell_project.c job_control.c job_control.h
 	$(CC) $(CFLAGS) Shell_project.c job_control.c -o Shell

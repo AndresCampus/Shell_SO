@@ -6,6 +6,7 @@ Ficheros fuente base para el desarrollo de la práctica de SO del Grado en Ingen
 - ***job_control.c***: fichero fuente con la implementación de funciones básicas de soporte para el desarrollo del Shell (ver documentación en el guión de la práctica).
 - ***job_control.h***: fichero con definiciones/cabeceras de las funciones de soporte.
 - ***redirections.c***: fichero fuente con ejemplo de redirección de entrada y salida estándar.
+- ***example_list.c***: fichero fuente con ejemplo de uso de la API de lista de trabajos (jobs).
 - ***Makefile***: fichero para automatizar la compilación del proyecto y los ejemplos.
 ---
 ### Extras:
@@ -18,7 +19,7 @@ Para compilar tanto el Shell como los ejemplos:
 `make`
 
 Para compilar un objetivo específico:
-`make Shell` o `make redirections`
+`make Shell`, `make redirections` o `make example_list`
 
 Para limpiar los ejecutables:
 `make clean`
@@ -35,7 +36,13 @@ Este ejemplo permite ejecutar un comando (ej. `sort`) redirigiendo su entrada de
 Para probarlo con el fichero `entrada.txt` proporcionado:
 1. Compilar: `make redirections`
 2. Ejecutar: `./redirections entrada.txt salida.txt sort`
-3. Comprobar resultado: `cat salida.txt`
+---
+### Uso del ejemplo de lista de trabajos:
+Este ejemplo demuestra cómo manipular la lista de trabajos (añadir, buscar, borrar y listar) usando la API de `job_control.h`.
+
+Para probarlo:
+1. Compilar: `make example_list`
+2. Ejecutar: `./example_list`
 
 ---
 ## Descripción del módulo ***job_control***

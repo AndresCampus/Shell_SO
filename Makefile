@@ -1,6 +1,6 @@
 CC = gcc
 CFLAGS = -Wall -g
-TARGETS = Shell redirections
+TARGETS = Shell redirections example_list
 
 all: $(TARGETS)
 
@@ -9,6 +9,9 @@ Shell: Shell_project.c job_control.c job_control.h
 
 redirections: redirections.c
 	$(CC) $(CFLAGS) redirections.c -o redirections
+
+example_list: example_list.c job_control.c job_control.h
+	$(CC) $(CFLAGS) example_list.c job_control.c -o example_list
 
 clean:
 	rm -f $(TARGETS) *.o
